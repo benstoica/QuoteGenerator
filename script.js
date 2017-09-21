@@ -1,8 +1,20 @@
+var url = "http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=jsonp&lang=en&jsonp=?";
+
+var getQuote = function(data)  {
+$(".quoteText").text(data.quoteText);
+var quot = 'https://twitter.com/intent/tweet?text=' + data.quoteText + ' Author ' + data.quoteAuthor;
+if (data.quoteAuthor === '') {
+    data.quoteAuthor = 'Unknown';
+  }
+$(".authorText").text('Author: ' + data.quoteAuthor);
+$(".twitter-share-button").attr("href", quot);
+
+};
+
 $(document).ready(function() {
-	$("#new").on("click",function(){
-	$.getJSON("https://random-quote-generator.herokuapp.com/api/quotes/random",function(json){
-$("#quoteDisplay").html(json.quote);
-		
-		});
-	});
+  $.getJSON(url, getQuote, 'jsonp');
+
+});
+$("#new").click(function() {
+  $.getJSON(url, getQuote, 'jsonp');
 });
