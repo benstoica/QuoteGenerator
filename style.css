@@ -1,15 +1,16 @@
 body {
 	text-align: center;
-	background: url("photo.jpg");
+	background: url("https://images.unsplash.com/10/wii.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=973fe0ba7c86609ecb1e642dcb8f7b9a");
 	background-size: cover;
 	background-repeat: no-repeat;
 	color: #faebd7;
 }
 #quoteDisplay {
-	font-family: Dancing Script;
 	padding-bottom: 25px;
+	font-family: DancingScript;
 	font-size: 1.5em;
 }
+
 h1 {
 	font-family: Oswald;
 }
